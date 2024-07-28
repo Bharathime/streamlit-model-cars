@@ -17,7 +17,6 @@ data = {
     "brand": ["Ferrari", "Porsche", "Lamborghini", "Mercedes-Benz", "BMW"],
     "model": ["488 GTB", "911 Carrera", "Aventador", "AMG GT", "M4"],
     "price": [5000, 7500, 4000, 4700, 4800],
-    "horsepower": [670, 450, 730, 523, 473],
     "image_url": [
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRmJ-LUhs89TlmhCcvsO2kiVIvRWXiczf5dg&s",
         "https://files.porsche.com/filestore/image/multimedia/none/992-gt3-rs-modelimage-sideshot/model/cfbb8ed3-1a15-11ed-80f5-005056bbdc38/porsche-model.png",
