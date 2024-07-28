@@ -1,36 +1,64 @@
 import streamlit as st
 import pandas as pd
-import matplotlib.pyplot as plt
+import plotly.express as px
 
-# Title and description
-st.title("Model Cars Collection")
-st.write("Explore various model cars in our collection.")
+# Set the title
+st.title("Model Cars Data Visualization")
 
-# Sample data
+# Add a header image
+st.image("/Users/bharathit/Desktop", use_column_width=True)
+
+# Introduction
+st.markdown("""
+### Welcome to the Model Cars Data Visualization App!
+Explore and interact with various datasets related to model cars.
+""")
+
+# Sample data similar to what might be scraped from the provided website
 data = {
-    'Model': ['Ferrari', 'Lamborghini', 'Porsche', 'Bugatti', 'McLaren'],
-    'Price': [250, 300, 450, 500, 350],
-    'Rating': [4.5, 4.7, 4.6, 4.8, 4.7]
+    "brand": ["Ferrari", "Porsche", "Lamborghini", "Mercedes-Benz", "BMW"],
+    "model": ["488 GTB", "911 Carrera", "Aventador", "AMG GT", "M4"],
+    "price": [300000, 100000, 400000, 150000, 80000],
+    "horsepower": [670, 450, 730, 523, 473],
+    "image_url": [
+        "/Users/bharathit/Desktop",
+        "/Users/bharathit/Desktop",
+        "/Users/bharathit/Desktop",
+        "/Users/bharathit/Desktop",
+        "/Users/bharathit/Desktop"
+    ]
 }
 
+# Create a DataFrame
 df = pd.DataFrame(data)
 
-# Display data
-st.write("## Car Models Data")
-st.dataframe(df)
+# Save DataFrame to CSV (if needed for future use)
+df.to_csv("model_cars_data.csv", index=False)
 
-# Interactive widgets
-st.write("## Filter Models")
-max_price = st.slider("Max Price", 0, 500, 300)
-filtered_df = df[df['Price'] <= max_price]
+# Display the data
+st.write(df)
 
-st.write(f"Models with price below {max_price}:")
-st.dataframe(filtered_df)
+# Add an interactive Plotly chart
+fig = px.scatter(df, x='price', y='horsepower', color='brand', title="Price vs Horsepower")
+st.plotly_chart(fig)
 
-# Data visualization
-st.write("## Price Distribution")
-fig, ax = plt.subplots()
-ax.hist(df['Price'], bins=5)
-st.pyplot(fig)
+# Optional image display
+for index, row in df.iterrows():
+    if st.checkbox(f"Show image of {row['brand']} {row['model']}"):
+        st.image(row['image_url'], caption=f"{row['brand']} {row['model']}", use_column_width=True)
 
+# Add a footer image
+st.image("/Users/bharathit/Desktop", use_column_width=True)
 
+# Background Image (Optional)
+st.markdown(
+    f"""
+    <style>
+    .stApp {{
+        background: url("/Users/bharathit/Desktop");
+        background-size: cover;
+    }}
+    </style>
+    """,
+    unsafe_allow_html=True
+)
