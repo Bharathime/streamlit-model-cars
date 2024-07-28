@@ -16,7 +16,7 @@ Explore and interact with various datasets related to model cars.
 data = {
     "brand": ["Ferrari", "Porsche", "Lamborghini", "Mercedes-Benz", "BMW"],
     "model": ["488 GTB", "911 Carrera", "Aventador", "AMG GT", "M4"],
-    "price": [300000, 100000, 400000, 150000, 80000],
+    "price": [5000, 7500, 4000, 4700, 4800],
     "horsepower": [670, 450, 730, 523, 473],
     "image_url": [
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRmJ-LUhs89TlmhCcvsO2kiVIvRWXiczf5dg&s",
