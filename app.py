@@ -5,8 +5,6 @@ import plotly.express as px
 # Set the title
 st.title("Model Cars Data Visualization")
 
-# Add a header image from an online URL
-st.image("https://w0.peakpx.com/wallpaper/234/744/HD-wallpaper-cars-car-d-sward-king.jpg", use_column_width=True)
 
 # Introduction
 st.markdown("""
@@ -21,7 +19,7 @@ data = {
     "price": [300000, 100000, 400000, 150000, 80000],
     "horsepower": [670, 450, 730, 523, 473],
     "image_url": [
-        "https:/https://cdni.autocarindia.com/Utils/ImageResizer.ashx?n=https://cdni.autocarindia.com/ExtraImages/20231026071351_asdfghjkl.jpg&w=700&c=1",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRmJ-LUhs89TlmhCcvsO2kiVIvRWXiczf5dg&s",
         "https://files.porsche.com/filestore/image/multimedia/none/992-gt3-rs-modelimage-sideshot/model/cfbb8ed3-1a15-11ed-80f5-005056bbdc38/porsche-model.png",
         "https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/facelift_2019/model_detail/few_off/sian-fkp-37/2022/06_20/over/sian_body_01.jpg",
         "https://www.motortrend.com/uploads/sites/10/2023/07/2023-mercedes-benz-s-class-580-maybach-sedan-angular-front.png",
@@ -44,8 +42,6 @@ for index, row in df.iterrows():
     if st.checkbox(f"Show image of {row['brand']} {row['model']}"):
         st.image(row['image_url'], caption=f"{row['brand']} {row['model']}", use_column_width=True)
 
-# Add a footer image from an online URL
-st.image("https://i.pinimg.com/736x/ff/51/de/ff51de001cf7ff9c77b8402b8b9f9d52.jpg", use_column_width=True)
 
 # Background Image (Optional)
 st.markdown(
