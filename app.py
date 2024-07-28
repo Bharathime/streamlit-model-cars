@@ -52,7 +52,7 @@ st.markdown(
     f"""
     <style>
     .stApp {{
-        background: url("https://i.pinimg.com/736x/f1/0e/19/f10e1991a7834ee7c9655c7250a4d8da.jpg");
+        background: url("https://i.pinimg.com/736x/2e/96/65/2e96651aa1d65a128847b36e06b27c01.jpg");
         background-size: cover;
     }}
     </style>
